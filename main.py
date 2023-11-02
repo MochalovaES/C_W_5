@@ -10,8 +10,8 @@ def main():
     companies = load_jsonfile(json_file)
     params = config()
     conn = None
-    create_database(db_name, params)
-    create_tables(db_name, params)
+    create_database(db_name, params) # Создание БД
+    create_tables(db_name, params)  # Создание таблиц
     hh_api = HeadHunterAPI()
     for company in companies:
         insert_data_companies(db_name, params, company['name'], company['id'])
